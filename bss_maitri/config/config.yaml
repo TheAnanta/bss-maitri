@@ -1,0 +1,36 @@
+model:
+  name: "gpt2"  # Using GPT-2 as fallback (freely available)
+  device: "cpu"  # Set to "cpu" for CPU-only inference
+  precision: "fp32"  # Options: fp16, bf16, fp32 - using fp32 for CPU
+  max_length: 1024
+  temperature: 0.7
+  top_p: 0.9
+
+emotion_detection:
+  audio:
+    sample_rate: 16000
+    frame_length: 2048
+    hop_length: 512
+    n_mels: 128
+  
+  vision:
+    face_detection_confidence: 0.5
+    emotion_threshold: 0.6
+    max_faces: 1
+
+conversation:
+  max_history: 10
+  response_timeout: 30
+  intervention_threshold: 0.8
+  support_mode: "adaptive"  # Options: adaptive, clinical, companion
+
+system:
+  log_level: "INFO"
+  save_conversations: true
+  model_cache_dir: "./models"
+  data_dir: "./data"
+  
+crew_monitoring:
+  critical_emotion_threshold: 0.9
+  alert_cooldown: 300  # seconds
+  health_check_interval: 3600  # 1 hour in seconds
