@@ -113,12 +113,14 @@ cython_debug/
 # VS Code
 .vscode/
 
-# Model files and cache
-models/
+# Model files and cache (but not source code)
+# models/  # Don't ignore models source directory
 *.bin
 *.safetensors
 transformers_cache/
 huggingface_cache/
+models_cache/
+model_weights/
 
 # Data files
 data/
