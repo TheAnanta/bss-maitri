@@ -1,8 +1,8 @@
 model:
-  name: "google/gemma-2-2b-it"  # Using Gemma 2 2B for better resource usage
-  device: "cuda"  # Set to "cpu" for CPU-only inference
-  precision: "fp16"  # Options: fp16, bf16, fp32
-  max_length: 2048
+  name: "gpt2"  # Using GPT-2 as fallback (freely available)
+  device: "cpu"  # Set to "cpu" for CPU-only inference
+  precision: "fp32"  # Options: fp16, bf16, fp32 - using fp32 for CPU
+  max_length: 1024
   temperature: 0.7
   top_p: 0.9
 
